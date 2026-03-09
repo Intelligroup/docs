@@ -7,19 +7,27 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Intelligroup',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Intelligroup/docs' }],
+			logo: {
+				light: './src/assets/logo_dark.png',
+				dark: './src/assets/logo_white.png',
+				replacesTitle: true,
+			},
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/Intelligroup/docs' },
+				{
+					icon: 'linkedin',
+					label: 'LinkedIn',
+					href: 'https://www.linkedin.com/company/intelligroup-automatizacion-negocio/',
+				},
+			],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+					label: 'IntelliVoice',
+					autogenerate: { directory: 'intellivoice' },
+				}
 			],
 		}),
 	],

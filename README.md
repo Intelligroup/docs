@@ -11,7 +11,7 @@ Preview the structure you already have in the repo:
 ├── public/
 ├── src/
 │   ├── assets/
-│   ├── content/
+│   ├── content/docs/
 │   │   └── index.mdx
 │   └── content.config.ts
 ├── astro.config.mjs
