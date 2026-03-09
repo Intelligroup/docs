@@ -1,0 +1,47 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        run: |
+          docker build -t intelligroup-docs:latest .
+
+      - name: Save Image
+        run: |
+          docker save -o intelligroup-docs.tar intelligroup-docs:latest
+          chmod 644 intelligroup-docs.tar
+
+      - name: Copy tar to servers
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.HOSTS }}
+          username: debian
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "intelligroup-docs.tar"
+          target: "/tmp/"
+
+      - name: Execute Remote Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.HOSTS }}
+          username: debian
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            docker load -i /tmp/intelligroup-docs.tar
+            docker rm -f intelligroup-docs || true
+            docker run -d --name intelligroup-docs -p 127.0.0.1:4321:80 --restart always intelligroup-docs:latest
+            rm /tmp/intelligroup-docs.tar
