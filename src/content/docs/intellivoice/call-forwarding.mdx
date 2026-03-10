@@ -1,0 +1,65 @@
+---
+title: Número de entrada y desvío de llamadas
+description: Cómo configurar el desvío de llamadas en tu móvil para que el agente de IA empiece a atender las llamadas de tu negocio.
+---
+
+Para que el agente de IA atienda las llamadas de tu negocio, tienes que configurar un desvío directamente desde el marcador de tu móvil. No necesitas llamar a tu operador ni instalar nada.
+
+La idea es sencilla: cuando alguien te llame y no lo cojas, tu operador redirige esa llamada al número de entrada de tu espacio de trabajo, y el agente la atiende.
+
+---
+
+## Paso 1 — Desactiva el buzón de voz
+
+Lo primero es quitar el buzón de voz y cualquier desvío que tengas activo. Si no lo haces, las llamadas irán al buzón antes de llegar al agente.
+
+Abre el marcador de tu móvil, escribe este código y pulsa llamar:
+
+```
+##002#
+```
+
+Verás un mensaje de confirmación en pantalla cuando se haya desactivado correctamente.
+
+:::caution
+¿Cuándo puede no funcionar este código?
+
+- **Servicio MultiSIM** — si tienes varias tarjetas con el mismo número, las operadoras bloquean estos códigos. Tendrás que hacerlo desde su app o llamando a atención al cliente.
+- **Líneas de empresa** — algunas centralitas virtuales tienen bloqueada la gestión de desvíos desde el terminal. Consulta con el administrador de tu empresa.
+- **OMV extranjeras** — en algunos países fuera de Europa el código puede variar, aunque en el 99% de los casos `##002#` es el estándar.
+:::
+
+---
+
+## Paso 2 — Activa el desvío por no respuesta
+
+Ahora marca el código de desvío según tu operadora. Sustituye `NÚMERO` por el número de entrada de tu espacio de trabajo.
+
+| Operadora | Código a marcar | Notas |
+|---|---|---|
+| **Vodafone** | `**61*NÚMERO*15#` | Permite intervalos de 5 a 30 segundos. |
+| **Movistar** | `**61*NÚMERO*15#` | Si tienes VoLTE activo, a veces ignora el tiempo y lo fija en 20 s. |
+| **Orange** | `**61*NÚMERO*15#` | Muy fiable con este código estándar. |
+| **Yoigo** | `**61*NÚMERO*15#` | Suele resetearse si cambias de tarjeta SIM. |
+| **Digi** | `**61*NÚMERO*15#` | Si tienes VoWiFi o VoLTE activo puede dar error de red. |
+| **Pepephone** | `**61*NÚMERO*15#` | Utiliza la red de Yoigo/Orange. |
+| **O2** | `**61*NÚMERO*15#` | Exactamente igual que Movistar. |
+| **Lowi** | `**61*NÚMERO*15#` | Utiliza la red de Vodafone. |
+
+El `15` del final indica que el desvío se activa tras 15 segundos sin respuesta. Escribe el código con tu número de entrada y pulsa llamar. Tu operador confirmará que el desvío ha quedado activo.
+
+---
+
+## Desactivar el desvío
+
+Si en algún momento quieres volver a atender las llamadas tú mismo, marca este código y pulsa llamar:
+
+```
+#61#
+```
+
+El desvío se desactivará de inmediato.
+
+---
+
+Una vez configurado, cualquier llamada que no respondas en 15 segundos pasará automáticamente al recepcionista IA, que la atenderá en tu nombre las 24 horas del día.

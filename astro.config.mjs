@@ -16,7 +16,8 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/Intelligroup/docs' },
+					href: 'https://github.com/Intelligroup/docs'
+				},
 				{
 					icon: 'linkedin',
 					label: 'LinkedIn',
@@ -26,8 +27,16 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'IntelliVoice',
-					autogenerate: { directory: 'intellivoice' },
-				}
+					items: [
+						{ slug: 'intellivoice/home' },
+						{ slug: 'intellivoice/dashboard' },
+						{ slug: 'intellivoice/recepcionist' },
+						{ slug: 'intellivoice/modules' },
+						{ slug: 'intellivoice/settings' },
+						{ slug: 'intellivoice/billing' },
+						{ slug: 'intellivoice/call-forwarding' },
+					],
+				},
 			],
 		}),
 	],
