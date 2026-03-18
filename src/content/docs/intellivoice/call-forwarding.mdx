@@ -9,7 +9,7 @@ La idea es sencilla: cuando alguien te llame y no lo cojas, tu operador redirige
 
 ---
 
-## Paso 1 — Desactiva el buzón de voz
+## Paso 1 — Desactivar el buzón de voz
 
 Lo primero es quitar el buzón de voz y cualquier desvío que tengas activo. Si no lo haces, las llamadas irán al buzón antes de llegar al agente.
 
@@ -34,24 +34,168 @@ Verás un mensaje de confirmación en pantalla cuando se haya desactivado correc
 
 ---
 
-## Paso 2 — Activa el desvío por no respuesta
-
-Ahora marca el código de desvío según tu operadora. Sustituye `NÚMERO` por el número de entrada de tu espacio de trabajo.
-
-| Operadora | Código a marcar | Notas |
-|---|---|---|
-| **Vodafone** | `**61*NÚMERO**15#` | Permite intervalos de 5 a 30 segundos. |
-| **Movistar** | `**61*NÚMERO**15#` | Si tienes VoLTE activo, a veces ignora el tiempo y lo fija en 20 s. |
-| **Orange** | `**61*NÚMERO**15#` | Muy fiable con este código estándar. |
-| **Yoigo** | `**61*NÚMERO**15#` | Suele resetearse si cambias de tarjeta SIM. |
-| **Digi** | `**61*NÚMERO**15#` | Si tienes VoWiFi o VoLTE activo puede dar error de red. |
-| **Pepephone** | `**61*NÚMERO**15#` | Utiliza la red de Yoigo/Orange. |
-| **O2** | `**61*NÚMERO**15#` | Exactamente igual que Movistar. |
-| **Lowi** | `**61*NÚMERO**15#` | Utiliza la red de Vodafone. |
-
-El `15` del final indica que el desvío se activa tras 15 segundos sin respuesta. Escribe el código con tu número de entrada y pulsa llamar. Tu operador confirmará que el desvío ha quedado activo.
+## Paso 2 — Activar el desvío
+Ahora que el buzón de voz está desactivado, el siguiente paso es configurar el desvío de llamadas al número de entrada de tu espacio de trabajo.
+:::caution
+Escribe el número **sin prefijo de país**. No añadas `+34`, `0034` ni ningún otro código internacional. Escríbelo tal y como marcarías una llamada local, por ejemplo `912345678`.
+:::
 
 ---
+
+### Vodafone
+
+<details>
+<summary>**Teléfono fijo**</summary>
+
+Abre el marcador y marca el código completo seguido de la tecla de llamada:
+
+| Cuándo se activa | Código a marcar |
+|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO` |
+| Cuando estás comunicando | `*67*NÚMERO` |
+| Cuando no contestas | `*61*NÚMERO` |
+| Cuando el teléfono está apagado o sin cobertura | `*62*NÚMERO` |
+
+</details>
+
+<details>
+<summary>**Teléfono móvil**</summary>
+
+Abre el marcador y marca el código completo seguido de `#` y la tecla de llamada:
+
+| Cuándo se activa | Código a marcar |
+|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO#` |
+| Cuando estás comunicando | `*67*NÚMERO#` |
+| Cuando no contestas | `*61*NÚMERO#` |
+| Cuando el teléfono está apagado o sin cobertura | `*62*NÚMERO#` |
+
+</details>
+
+---
+
+### Movistar y O2
+
+<details>
+<summary>**Teléfono móvil**</summary>
+
+| Cuándo se activa | Activar | Desactivar |
+|---|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO*15#` | `#21#` |
+| Cuando el móvil está apagado o sin cobertura | `*62*NÚMERO#` | `#62#` |
+| Cuando comunicas o rechazas la llamada | `*67*NÚMERO#` | `#67#` |
+| Cuando no contestas | `*61*NÚMERO#` | `#61#` |
+
+El `15` del código de "todas las llamadas" son los segundos de espera antes de activar el desvío. Puedes cambiarlo a `20` si prefieres más tiempo.
+
+</details>
+
+<details>
+<summary>**Teléfono fijo**</summary>
+
+| Cuándo se activa | Activar | Desactivar |
+|---|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO#` | `#21#` |
+| Cuando el teléfono está sin cobertura | `*62*NÚMERO#` | `#62#` |
+| Cuando comunicas o rechazas la llamada | `*67*NÚMERO#` | `#67#` |
+| Cuando no contestas | `*61*NÚMERO#` | `#61#` |
+
+</details>
+
+---
+
+### Orange
+
+<details>
+<summary>**Teléfono móvil**</summary>
+
+| Cuándo se activa | Activar | Desactivar |
+|---|---|---|
+| Cuando no contestas | `*61*NÚMERO*TIEMPO#` | `##61#` |
+| Cuando el móvil está apagado o sin cobertura | `*62*NÚMERO#` | `##62#` |
+| Cuando estás comunicando | `*67*NÚMERO#` | `##67#` |
+| Siempre (todas las llamadas) | `*21*NÚMERO#` | `##21#` |
+| Desactivar todos los desvíos al buzón de voz | `##002#` | — |
+
+Donde pone `TIEMPO`, escribe el número de segundos que quieres esperar antes de desviar (entre 5 y 20, en múltiplos de 5). Por ejemplo: `*61*NÚMERO*15#`.
+
+</details>
+
+<details>
+<summary>**Teléfono fijo** (Si está conectado directamente a tu router)</summary>
+
+| Cuándo se activa | Activar | Desactivar |
+|---|---|---|
+| Siempre (todas las llamadas) | `*21NÚMERO` | `*211` |
+| Cuando estás comunicando | `*22NÚMERO` | `*221` |
+| Cuando no contestas | `*23NÚMERO` | `*231` |
+
+Nota: en este caso el número se escribe directamente después del código, sin asterisco ni almohadilla al final.
+
+</details>
+
+<details>
+<summary>**Teléfono fijo** (Si está conectado a la roseta de la pared)</summary>
+
+| Cuándo se activa | Activar | Desactivar |
+|---|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO#` | `#21#` |
+| Cuando estás comunicando | `*67*NÚMERO#` | `#67#` |
+| Cuando no contestas | `*61*NÚMERO#` | `#61#` |
+
+</details>
+
+---
+
+### Yoigo
+
+Abre el marcador, escribe el código completo y pulsa la tecla de llamada:
+
+| Cuándo se activa | Código a marcar |
+|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO#` |
+| Cuando estás comunicando | `*67*NÚMERO#` |
+| Cuando no contestas | `*61*NÚMERO#` |
+| Cuando el móvil está apagado o sin cobertura | `*62*NÚMERO#` |
+
+---
+
+### Digi
+
+Abre el marcador, escribe el código completo y pulsa la tecla de llamada:
+
+| Cuándo se activa | Ver estado | Activar | Desactivar |
+|---|---|---|---|
+| Siempre (todas las llamadas) | `*#21#` | `**21*NÚMERO#` | `##21#` |
+| Cuando estás comunicando | `*#67#` | `**67*NÚMERO#` | `##67#` |
+| Sin cobertura o móvil apagado | `*#62#` | `**62*NÚMERO#` | `##62#` |
+| Cuando no contestas | `*#61#` | `**61*NÚMERO#` | `##61#` |
+
+---
+
+### Pepephone
+
+Abre el marcador, escribe el código completo y pulsa la tecla de llamada:
+
+| Cuándo se activa | Código a marcar |
+|---|---|
+| Siempre (todas las llamadas) | `*21*NÚMERO#` |
+| Cuando estás comunicando | `*67*NÚMERO#` |
+| Cuando no contestas | `*61*NÚMERO#` |
+| Cuando el móvil está apagado o sin cobertura | `*62*NÚMERO#` |
+
+---
+
+### Lowi
+
+Abre el marcador, escribe el código completo y pulsa la tecla de llamada:
+
+| Cuándo se activa | Código a marcar |
+|---|---|
+| Siempre (todas las llamadas entrantes) | `**21*NÚMERO#` |
+| Cuando no contestas | `**61*NÚMERO#` |
+| Cuando el móvil está apagado o sin cobertura | `**62*NÚMERO#` |
+| Cuando estás comunicando | `**67*NÚMERO#` |
 
 ## Desactivar el desvío
 
@@ -64,5 +208,3 @@ Si en algún momento quieres volver a atender las llamadas tú mismo, marca este
 El desvío se desactivará de inmediato.
 
 ---
-
-Una vez configurado, cualquier llamada que no respondas en 15 segundos pasará automáticamente al recepcionista IA, que la atenderá en tu nombre las 24 horas del día.
