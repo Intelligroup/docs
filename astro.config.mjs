@@ -29,15 +29,32 @@ export default defineConfig({
 					label: 'IntelliVoice',
 					items: [
 						{ slug: 'intellivoice/home' },
-						{ slug: 'intellivoice/dashboard' },
-						{ slug: 'intellivoice/recepcionist' },
-						{ slug: 'intellivoice/modules' },
-						{ slug: 'intellivoice/settings' },
-						{ slug: 'intellivoice/billing' },
-						{ slug: 'intellivoice/call-forwarding' },
+						{
+							label: 'Mi negocio',
+							items: [
+								{ slug: 'intellivoice/workspace/general' },
+								{ slug: 'intellivoice/workspace/knowledge' },
+								{ slug: 'intellivoice/workspace/billing' },
+							],
+						},
+						{
+							label: 'Agente',
+							items: [
+								{ slug: 'intellivoice/agent/reports' },
+								{ slug: 'intellivoice/agent/tasks' },
+								{ slug: 'intellivoice/agent/calls' },
+								{ slug: 'intellivoice/agent/settings' },
+							],
+						},
+						{
+							label: 'Herramientas',
+							items: [
+								{ slug: 'intellivoice/tools/modules' }
+							],
+						},
 					],
 				},
 			],
 		}),
-	],
+	]
 });
