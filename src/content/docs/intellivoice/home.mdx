@@ -16,3 +16,35 @@ El negocio simplemente redirige las llamadas de su número de teléfono al núme
 - **Sistema de saldo en euros** — Cada llamada consume crédito. Se puede recargar manualmente o activar la recarga automática para asegurar no perder ninguna llamada.
 - **Ajustes del negocio** — Donde se ajusta el nombre, teléfono, web, ubicación, horarios, idioma del agente, mensaje de bienvenida y descripción del negocio.
 - **Onboarding guiado** — Al crear la cuenta, un asistente paso a paso ayuda a configurar el agente buscando automáticamente el negocio en Google Maps o rellenando los datos a mano.
+
+---
+
+## Cómo está organizado el panel
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+### Mi negocio
+
+<CardGrid>
+  <LinkCard title="Inicio" description="Resumen del día: llamadas, tiempo ahorrado, tareas y valor estimado de tus llamadas." href="/intellivoice/workspace/inicio" />
+  <LinkCard title="Personalización" description="Identidad, contacto y horario del negocio. Los datos con los que contesta el agente." href="/intellivoice/workspace/general" />
+  <LinkCard title="Contenido" description="Preguntas frecuentes, servicios y empleados: lo que el agente sabe de tu negocio." href="/intellivoice/workspace/knowledge" />
+  <LinkCard title="Facturación" description="Consumo, recargas de saldo e historial de transacciones." href="/intellivoice/workspace/billing" />
+</CardGrid>
+
+### Agente
+
+<CardGrid>
+  <LinkCard title="Tareas" description="Las llamadas pendientes de gestión, agrupadas por contacto." href="/intellivoice/agent/tasks" />
+  <LinkCard title="Llamadas" description="Listado de llamadas entrantes, con datos recogidos y transcripción." href="/intellivoice/agent/calls" />
+  <LinkCard title="Calendario" description="La agenda de citas que el agente rellena por teléfono." href="/intellivoice/agent/calendar" />
+  <LinkCard title="Análisis" description="Volumen por día y hora, duración de las llamadas y gestión." href="/intellivoice/agent/analysis" />
+  <LinkCard title="Configuración" description="Voz, idioma, datos a recoger, citas, desvíos y avisos." href="/intellivoice/agent/settings" />
+</CardGrid>
+
+### Herramientas
+
+<CardGrid>
+  <LinkCard title="Módulos" description="Activa o desactiva Recepcionista, Calendario y Notificador." href="/intellivoice/tools/modules" />
+  <LinkCard title="Números bloqueados" description="Ignora las llamadas y mensajes de los números que añadas." href="/intellivoice/tools/blocklist" />
+</CardGrid>

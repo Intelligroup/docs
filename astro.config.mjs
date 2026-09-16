@@ -32,6 +32,7 @@ export default defineConfig({
 						{
 							label: 'Mi negocio',
 							items: [
+								{ slug: 'intellivoice/workspace/inicio' },
 								{ slug: 'intellivoice/workspace/general' },
 								{ slug: 'intellivoice/workspace/knowledge' },
 								{ slug: 'intellivoice/workspace/billing' },
@@ -40,18 +41,21 @@ export default defineConfig({
 						{
 							label: 'Agente',
 							items: [
-								{ slug: 'intellivoice/agent/reports' },
 								{ slug: 'intellivoice/agent/tasks' },
 								{ slug: 'intellivoice/agent/calls' },
+								{ slug: 'intellivoice/agent/calendar' },
+								{ slug: 'intellivoice/agent/analysis' },
 								{ slug: 'intellivoice/agent/settings' },
 							],
 						},
 						{
 							label: 'Herramientas',
 							items: [
-								{ slug: 'intellivoice/tools/modules' }
+								{ slug: 'intellivoice/tools/modules' },
+								{ slug: 'intellivoice/tools/blocklist' },
 							],
 						},
+						{ slug: 'intellivoice/call-forwarding' },
 					],
 				},
 			],

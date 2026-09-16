@@ -1,53 +1,61 @@
 ---
-title: General
-description: lorem
+title: Personalización
+description: Configura la identidad, el contacto y el horario de tu negocio para que el agente de voz conteste con los datos correctos.
 ---
 
-Es la pantalla donde configuras toda la información de tu negocio. El agente de voz usa estos datos para contestar las llamadas correctamente.
+Es la pantalla donde defines la información de tu negocio. El agente de voz usa estos datos para contestar las llamadas correctamente. Está dividida en tres bloques: **Identidad**, **Contacto** y **Horario de atención**.
 
-![Vista general de la configuración del negocio](../../../../assets/general-overview.png)
-
----
-
-## Logo
-
-Sube una imagen en formato JPG, PNG o GIF con un tamaño máximo de 64 KB. Se muestra una previsualización al instante y puedes eliminar el logo en cualquier momento con el botón Quitar imagen.
+![Vista general de Personalización](../../../../assets/general-overview.png)
 
 ---
 
-## Datos del negocio
+## Identidad
+
+Logo, nombre y descripción de tu negocio.
 
 | Campo | Descripción |
-| --- | --- |
-| **Nombre** | Cómo se llama tu negocio. |
-| **Teléfono** | Número de contacto del negocio. |
-| **Zona horaria** | Se selecciona desde un desplegable. Ejemplo: `Europe/Madrid`. |
-| **Sitio web** | URL del negocio. |
-| **Ubicación** | Dirección o ciudad del negocio. |
-| **Descripción** | Campo de texto libre donde escribes todo lo que el agente debe saber — servicios, productos, instrucciones, etc. |
+|---|---|
+| **Logo** | Botón **Subir imagen**. Formatos JPG, PNG o GIF, con un tamaño máximo de **64 KB**. Se previsualiza al instante. |
+| **Nombre** | Cómo se llama tu negocio. Es el nombre que dice el agente al contestar. |
+| **Teléfono** | Número de contacto público del negocio. |
+| **Tu móvil personal** | Tu número, para que podamos llamarte y ayudarte con la configuración. No se lo da a los clientes. |
+| **Ticket medio** | Lo que gasta de media un cliente. Se usa para estimar el **valor de tus llamadas** en [Inicio](/intellivoice/workspace/inicio). |
+| **Tasa de conversión media** | Qué porcentaje de llamadas acaba en venta. Si no la has definido, aparece el enlace **Configurar tasa de conversión**. |
+| **Descripción** | Texto libre con todo lo que el agente debe saber — a qué os dedicáis, cómo trabajáis, instrucciones. |
 
-![Campos de datos del negocio](../../../../assets/general-workspace-fields.png)
+![Bloque de Identidad](../../../../assets/general-identity.png)
 
 :::tip
-La **descripción** es el campo más importante. Cuanto más detallada sea, mejor contestará el agente las preguntas de tus clientes.
+La **descripción** es el campo más importante: cuanto más detallada, mejor contesta el agente. Para preguntas concretas, precios y servicios es mejor usar [Contenido](/intellivoice/workspace/knowledge), que está estructurado y el agente lo consulta mejor.
 :::
 
 ---
 
-## Horario
+## Contacto
 
-Define en qué días y a qué horas está disponible tu negocio. Hay una fila por cada día de la semana, de lunes a domingo.
+Cómo te encuentran tus clientes y dónde estás.
 
-En cada fila puedes:
-- **Activar o desactivar el día** con el interruptor. Si está desactivado, aparece como "No disponible".
-- **Configurar los turnos** cuando el día está activo: hora de apertura y hora de cierre en intervalos de 30 minutos.
-- **Añadir varios turnos** por día (por ejemplo, mañana y tarde) con el botón +.
-- **Eliminar un turno** individualmente con el icono de papelera.
-
-![Horario de apertura](../../../../assets/general-workspace-hours.png)
+| Campo | Descripción |
+|---|---|
+| **Sitio web** | URL del negocio. |
+| **Ubicación** | Dirección o ciudad. |
+| **Zona horaria** | Se elige de un desplegable. Ejemplo: `Europe/Madrid`. Determina a qué hora se aplica tu horario. |
 
 ---
 
-## Guardar cambios
+## Horario de atención
 
-Cuando termines de editar, usa el botón **Guardar** para aplicar los cambios. Si quieres descartar todo lo que has modificado, usa **Cancelar**.
+Activa los días que abres y define tus turnos. Hay una fila por cada día de la semana.
+
+En cada fila puedes:
+
+- **Activar o desactivar el día** con el interruptor. Los días desactivados quedan sin turnos.
+- **Configurar el turno**: hora de apertura y hora de cierre en intervalos de 30 minutos.
+- **Añadir varios turnos** por día — por ejemplo mañana y tarde — con el botón **+**.
+- **Eliminar un turno** con el icono de papelera.
+
+![Horario de atención](../../../../assets/general-hours.png)
+
+:::note
+Este horario es el del negocio. Las llamadas que entran fuera de él las sigue atendiendo el agente, y las verás contadas en la tarjeta **Fuera de horario** de Inicio. El horario en el que se pueden **agendar citas** se configura aparte, en [Configuración → Calendario](/intellivoice/agent/settings).
+:::

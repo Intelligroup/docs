@@ -1,62 +1,71 @@
 ---
 title: Llamadas
-description: lorem
+description: Revisa las llamadas entrantes, los datos que recogió el agente y la transcripción completa de cada conversación.
 ---
 
-Gestiona todas las llamadas entrantes, revisa la información recopilada y mantén un registro de todas las interacciones con tu agente virtual.
+Gestiona las llamadas entrantes y revisa lo que pidió cada cliente.
 
-![Vista general del inicio](../../../../assets/calls-overview.png)
-
----
-
-## Vista de llamadas
-
-Puedes elegir entre dos formas de visualizar el listado:
-- **Vista Tabla** — filas con columnas: notas, fecha, teléfono, estado, resumen y los campos de datos configurados (nombre, matrícula, marca y modelo, motivo de consulta, etc.).
-- **Vista Tarjetas** — cada llamada como una tarjeta individual con la información más relevante.
-Cambia entre ambas vistas con los botones **Tabla / Tarjetas** en la esquina superior derecha.
-
-![Vista general del inicio](../../../../assets/calls-overviews.gif)
+![Vista general de llamadas](../../../../assets/calls-overview.png)
 
 ---
 
-## Filtros 
+## Tabla o tarjetas
 
-En la barra superior del listado encontrarás los siguientes controles:
+Cambia la forma de ver el listado con los botones **Tabla / Tarjetas** de la esquina superior derecha:
+
+- **Tabla** — una fila por llamada, con columnas de fecha, teléfono, estado, resumen y los campos que hayas configurado que recoja el agente (nombre, teléfono de contacto, servicio que necesita…).
+- **Tarjetas** — cada llamada en su propia tarjeta, cómodo cuando recoges pocos datos por llamada.
+
+![Vista de tarjetas](../../../../assets/calls-cards.png)
+
+---
+
+## Buscar y filtrar
+
 | Control | Descripción |
 |---|---|
-| **Filtro de estado** | Muestra Todas, Sin estado, Pendientes o Gestionadas. |
-| **Fecha** | Filtra las llamadas por rango de fechas. |
-| **Contador** | A la derecha de los filtros, indica cuántas llamadas hay con los filtros aplicados. |
-
-![Vista general del inicio](../../../../assets/calls-filters.png)
+| **Buscar por teléfono** | Campo de búsqueda para encontrar todas las llamadas de un número. |
+| **Filtro de estado** | Todas, Sin estado, Pendientes o Gestionadas. |
+| **Fecha** | Filtra por rango de fechas. |
+| **Contador** | A la derecha, cuántas llamadas hay con los filtros aplicados. |
 
 ---
 
 ## Carga y refresco
 
-- Si tienes muchas llamadas, baja hasta el final de la lista y se cargarán más automáticamente.
-- La pantalla se actualiza automáticamente en segundo plano cada 30 segundos.
-- Pulsa el icono de flechas circulares en la esquina superior derecha para refrescar al instante.
+- Si tienes muchas llamadas, baja hasta el final de la lista y se cargan más solas.
+- La pantalla se refresca sola en segundo plano.
+- El icono de flechas circulares de la esquina superior derecha la actualiza al instante.
 
 ---
 
-## Acciones por llamada
+## Detalle de la llamada
 
-#### Ver el detalle
+Haz clic en cualquier fila o tarjeta para abrir el panel lateral.
 
-Haz clic en cualquier fila o tarjeta para abrir un panel lateral con:
+![Detalle de la llamada](../../../../assets/calls-call-detail.png)
 
-- **Fecha y teléfono** del llamante.
-- **Datos recopilados** durante la llamada.
+Contiene:
+
+- **Teléfono**, tipo de llamada, fecha y **duración**.
+- **Estado**, que puedes cambiar desde aquí mismo.
 - **Resumen** generado automáticamente por la IA.
-- **Transcripción completa** — todo lo que se dijo, turno a turno, indicando si habló el **Agente** o el **Usuario**. 
+- **Datos recopilados**, con el contador de campos completados (*0 de 3 campos*). Si la llamada se cortó antes de que el agente pudiera preguntar, lo indica.
+- **Nota interna** — enlace **+ Añadir nota interna** para escribir lo que necesites. Las llamadas que ya tienen nota se marcan con un icono en el listado.
+- **Transcripción** completa, turno a turno, indicando si habló el **Agente** o el **Cliente**. Se puede plegar y copiar entera con el botón **Copiar**.
 
-![Vista de llamada](../../../../assets/calls-call-detail.png)
+Al final del panel tienes dos acciones:
 
-#### Cambiar el estado
+- **Bloquear llamadas** — añade ese número a [Números bloqueados](/intellivoice/tools/blocklist).
+- **Reportar llamada** — nos avisa de que algo no fue bien en esa conversación.
 
-Cada llamada tiene un selector de estado con tres opciones. Puedes cambiarlo directamente desde la tabla o las tarjetas sin necesidad de abrir el detalle.
+---
+
+## Cambiar el estado
+
+Cada llamada tiene un selector de estado, disponible tanto en el listado como en el detalle. Al cambiarlo se guarda al momento.
+
+![Selector de estado](../../../../assets/calls-status.png)
 
 | Estado | Indicador |
 |---|---|
@@ -64,10 +73,4 @@ Cada llamada tiene un selector de estado con tres opciones. Puedes cambiarlo dir
 | **Pendiente** | Punto amarillo |
 | **Gestionado** | Punto verde |
 
-#### Añadir o editar notas
-
-Cada llamada tiene un botón de notas (icono de libreta). Al pulsarlo se abre un cuadro de texto libre para escribir notas internas. Si la llamada ya tiene notas, el icono aparece destacado.
-
-![Vista de notas](../../../../assets/calls-notes.png)
-
----
+Las llamadas en **Pendiente** son las que aparecen en [Tareas](/intellivoice/agent/tasks).

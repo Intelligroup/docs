@@ -1,101 +1,99 @@
 ---
 title: Configuración
-description: lorem
+description: Define cómo habla el agente, qué datos recoge, cómo agenda citas, cuándo se desvían tus llamadas y cómo te avisa.
 ---
 
-Aquí configuras el comportamiento del agente de voz, las citas y los desvíos de llamada. La pantalla se divide en tres pestañas: *Agente, Citas y Desvíos de llamada.*
+Aquí configuras el comportamiento del agente. La pantalla se divide en cuatro pestañas: **Agente**, **Calendario**, **Desvíos de llamada** y **Notificador**.
 
 ---
 
 ## Agente
 
-Define cómo se comporta el agente durante las llamadas
+Define cómo se comporta el agente durante las llamadas. Los tres primeros ajustes son filas plegables: pulsa una para abrirla y editarla.
 
-![Vista general de configuración del agente](../../../../assets/agent-settings-overview.png)
+![Configuración del agente](../../../../assets/agent-settings-overview.png)
 
-#### Saludo inicial
-
-El primer mensaje que dirá el agente al contestar una llamada. Por ejemplo: "*¡Hola! Gracias por llamar a…, ¿en qué te puedo ayudar?*"
-
-#### Idioma inicial
-
-El idioma principal que usará el agente al contestar las llamadas.
-
-#### Voz inicial
-
-La voz con la que hablará el agente. Puedes elegir entre las voces disponibles en el desplegable.
-
-#### Información a solicitar
-
-
-Define qué datos debe recopilar el agente durante cada llamada. Cada campo tiene:
-- **Nombre del campo** — el dato que se quiere obtener (ej: "*Nombre completo*", "*Matrícula del vehículo*").
-- **Descripción del campo** — contexto adicional para que la IA entienda cómo pedir ese dato.
-- **Sugerir con IA** — genera automáticamente una descripción sugerida a partir del nombre del campo.
-
-Puedes gestionar los campos de la siguiente manera:
-
-- **Agregar** — botón **+ Agregar** para añadir un campo nuevo.
-- **Sugeridos** — accede a campos predefinidos recomendados para tu tipo de negocio.
-- **Reordenar** — arrastra los campos con el icono de arrastre a la izquierda de cada uno.
-- **Eliminar** — icono de papelera junto a cada campo.
+| Ajuste | Qué define |
+|---|---|
+| **Saludo inicial** | El primer mensaje que dice el agente al contestar. |
+| **Idioma inicial** | El idioma en el que arranca la conversación. |
+| **Voz inicial** | La voz con la que habla, de entre las disponibles en el desplegable. |
 
 :::caution
-Los cambios en los campos solo afectan a las **llamadas nuevas**. Las llamadas anteriores conservan los datos que se recopilaron con la configuración activa en ese momento.
+El saludo incluye siempre el **aviso de grabación** y la identificación como asistente virtual. Son obligatorios por el RGPD y el AI Act europeo: puedes mover dónde se dicen dentro del saludo, pero no quitarlos.
+:::
+
+### Datos que pedirá tu recepcionista
+
+Cada campo es un dato que el agente preguntará al cliente y guardará en el resumen de la llamada. Cada uno tiene:
+
+- **Nombre del campo** — el dato que quieres obtener (*Nombre*, *Teléfono de contacto*, *Servicio que necesita*).
+- **Descripción** — contexto para que la IA entienda cómo pedirlo y qué formato espera.
+
+Con el botón **+ Agregar** añades uno nuevo, el icono de arrastre a la izquierda los reordena y el de papelera los elimina.
+
+:::caution
+Los cambios en los campos solo afectan a las **llamadas nuevas**. Las anteriores conservan los datos que se recogieron con la configuración de entonces.
 :::
 
 ---
 
-## Citas
+## Calendario
 
-Configura cómo gestiona el agente las solicitudes de cita.
+Configura cómo agenda citas el agente. Requiere el módulo **Calendario** activo.
 
-![Vista general de configuración de citas](../../../../assets/agent-settings-appointment.png)
+![Configuración de calendario](../../../../assets/agent-settings-calendar.png)
 
-| Campo | Descripción |
+| Ajuste | Qué define |
 |---|---|
-| **Límite** | Número máximo de citas que se pueden agendar por día. |
-| **Simultáneas** | Cuántas citas pueden coincidir a la misma hora. |
-| **Anticipación** | Con cuántas horas de antelación mínima se puede reservar una cita. |
+| **Límite** | Cuántas citas se pueden agendar al día. |
+| **Simultáneas** | Cuántas pueden coincidir a la misma hora. |
+| **Anticipación** | Con cuánta antelación mínima se puede reservar. |
 
-#### Horario de disponibilidad
+### Horario de disponibilidad
 
-Define en qué días y franjas horarias se pueden agendar citas. Hay una fila por cada día de la semana. Activa los días disponibles con el interruptor y configura la franja horaria correspondiente.
+Los días y franjas en los que se aceptan citas, con una fila por día. Actívalos con el interruptor y define los turnos; con **+** añades un segundo turno y con la papelera eliminas uno.
+
+:::note
+Este horario es solo para **citas** y es independiente del horario de atención del negocio, que se define en [Personalización](/intellivoice/workspace/general).
+:::
 
 ---
 
 ## Desvíos de llamada
 
-Configura el desvío de llamadas desde esta misma pantalla, sin necesidad de marcar códigos en el teléfono manualmente.
+Configura el desvío desde aquí, sin marcar códigos en el teléfono.
 
-![Vista general de redirección de llamadas](../../../../assets/agent-settings-redirects.png)
+![Desvíos de llamada](../../../../assets/agent-settings-redirects.png)
 
-#### Teléfono de entrada
+| Ajuste | Qué define |
+|---|---|
+| **Teléfono del asistente** | El número asignado a tu espacio de trabajo, al que se redirigen tus llamadas. |
+| **Operador** | Tu operador, para aplicar los códigos correctos. |
+| **Tipo** | Si tu línea es móvil o fija. |
 
-Muestra el número asignado a tu espacio de trabajo, al que debes redirigir las llamadas de tu negocio.
+### Cuándo desviar
 
-#### Operador
-
-Selecciona el operador de tu número de destino para que los desvíos funcionen correctamente. Opciones disponibles: Movistar y O2, Vodafone, Orange, Yoigo, Digi, Pepephone, Simyo, Lowi, MásMóvil.
-
-#### Tipo
-
-Indica el tipo de línea (móvil o fijo).
-
-#### ¿Cuándo quieres desviar tus llamadas?
-
-Puedes activar varias opciones a la vez o elegir desviar todo:
-
-**Desvíos condicionales**
+Puedes combinar varios desvíos condicionales:
 
 | Opción | Cuándo se activa |
 |---|---|
 | **Ocupado** | Cuando ya estás hablando con otra persona. |
-| **Sin repuesta** | Cuando suena pero no llegas a contestar. |
-| **No disponible** | Cuando tu dispositivo está apagado o sin cobertura. |
+| **Sin respuesta** | Cuando suena pero no llegas a contestar. |
+| **No disponible** | Cuando tu teléfono está apagado o sin cobertura. |
 
-**Desvío incondicional**
+O bien activar **Siempre**, que desvía todas las llamadas al instante.
 
-| Opción | Cuándo se activa |
-|---|---|
-| **Siempre** | Desvía todas las llamadas al instante. |
+:::tip
+Si el desvío automático no funciona con tu línea — MultiSIM, centralita de empresa u operador extranjero — puedes configurarlo a mano con los códigos de tu operador: [Desvío manual de llamadas](/intellivoice/call-forwarding).
+:::
+
+---
+
+## Notificador
+
+Recibe un aviso por WhatsApp, para ti o para tu equipo, cada vez que el agente atiende una llamada.
+
+![Pestaña de notificador](../../../../assets/agent-settings-notifier.png)
+
+Si el módulo está desactivado, la pestaña muestra el botón **Activar módulo**. Una vez activo, defines aquí a qué números se envían los avisos.

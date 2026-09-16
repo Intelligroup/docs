@@ -1,21 +1,25 @@
 ---
 title: Facturación
-description: lorem
+description: Consulta tu consumo, recarga saldo y revisa el historial de transacciones de tu espacio de trabajo.
 ---
 
-Consulta tu consumo y el historial de transacciones. En la esquina superior derecha tienes tres acciones rápidas:
+Consulta tu consumo y el historial de transacciones. En la esquina superior derecha tienes el selector de período y tres acciones:
 
-- **Ver facturas** — te lleva al portal de Stripe en una nueva pestaña, donde puedes descargar tus facturas y actualizar tu método de pago.
-- **Recarga automática** — abre la configuración para que tu saldo se recargue solo.
-- **+ Añadir saldo** — abre el catálogo de paquetes de recarga.
+- **Últimos 30 días** — el rango de fechas que se aplica a toda la pantalla.
+- **Ver facturas** — abre el portal de Stripe en una pestaña nueva, donde descargas tus facturas y actualizas el método de pago.
+- **+ Añadir saldo manualmente** — abre el catálogo de paquetes de recarga.
 
 ![Vista general de facturación](../../../../assets/billings-overview.png)
+
+:::caution
+Si la recarga automática está desactivada, aparece un aviso en la parte superior: cuando el saldo llega a 0 € el agente **deja de atender llamadas**. El botón **Activar recarga automática** del propio aviso la configura.
+:::
 
 ---
 
 ## Consumo a lo largo del tiempo
 
-Gráfica de barras que muestra el desglose diario, semanal o mensual del coste por tipo. Puedes ajustar la granularidad con el selector **Día / Semana / Mes** y elegir el período con el selector de fechas.
+Gráfica de barras con el coste por tipo. Cambia la granularidad con el selector **Día / Semana / Mes**; cada barra se divide en colores según el concepto (conversaciones, cuotas de módulo, etc.).
 
 ![Gráfica de consumo a lo largo del tiempo](../../../../assets/billings-consumed-by-time.png)
 
@@ -23,11 +27,11 @@ Gráfica de barras que muestra el desglose diario, semanal o mensual del coste p
 
 ## Consumo por período
 
-Elige un rango de fechas y verás un desglose detallado de tus gastos:
+El desglose del período seleccionado:
 
-- Una **barra de uso por módulo**: dividida en bloques de colores, uno por cada tipo de gasto (cuota mensual del Recepcionista, conversaciones, recargas, etc.). Pasa el cursor por encima de cada bloque para ver el concepto y su importe exacto.
-- Una **leyenda** con el nombre de cada concepto y lo que has gastado en él.
-- El **total usado** en el período seleccionado.
+- Una **barra de uso** dividida en bloques de color, uno por concepto. Pasa el cursor por encima para ver el importe exacto.
+- Una **leyenda** con cada concepto y lo gastado en él — por ejemplo *Conversación*, *Cuota mensual Recepcionista* o *Cuota mensual Calendario*.
+- El **total usado** en el período.
 
 ![Consumo por período](../../../../assets/billings-consumed-by-period.png)
 
@@ -35,44 +39,37 @@ Elige un rango de fechas y verás un desglose detallado de tus gastos:
 
 ## Historial de transacciones
 
-Tabla con todos los movimientos del período seleccionado:
+Tabla con todos los movimientos del período:
 
 - **Fecha** del movimiento.
-- **Importe** — en verde si es una recarga o un regalo, en rojo si es un consumo.
-- **Tipo** — etiqueta identificativa del concepto (Conversación, Cuota mensual Recepcionista, etc.).
+- **Importe** — en verde las recargas y regalos, en rojo los consumos.
+- **Tipo** — etiqueta del concepto.
 
-![Consumo por período](../../../../assets/billings-transaction-history.png)
+![Historial de transacciones](../../../../assets/billings-transaction-history.png)
 
-Si tienes más de 10 registros, aparecen botones de paginación para moverte entre páginas.
-
-Usa el botón **Exportar Excel** para descargarte todos los movimientos en un archivo `.xlsx`.
+Si hay más de 10 registros aparecen botones de paginación. El botón **Exportar Excel** te descarga todos los movimientos en un `.xlsx`.
 
 ---
 
 ## Añadir saldo
 
-Al pulsar **+ Añadir saldo** se abre una ventana con todos los paquetes de recarga disponibles. Cada paquete muestra:
+Al pulsar **+ Añadir saldo manualmente** se abre el catálogo de paquetes. Cada uno muestra el **precio + IVA** y, si lo lleva, los **euros de regalo** que se suman a la recarga. El paquete recomendado va marcado como **Más popular**, y el enlace **Ver más opciones** despliega el resto.
 
-- Su **precio en euros**.
-- El **nombre del paquete**.
-- Si incluye **euros de regalo**, aparece indicado con un icono de regalo.
-- Los paquetes más populares o con mejor valor llevan una **etiqueta especial** visible.
+![Diálogo de compra de saldo](../../../../assets/billings-add-balance.png)
 
-![Historial de transacciones](../../../../assets/billings-add-balance.png)
-
-Cuando eliges un paquete, el botón de confirmación te muestra el importe exacto antes de confirmar. El pago se procesa al momento y el saldo se actualiza enseguida.
+Al elegir un paquete, el botón **Comprar ahora** confirma la compra. El pago se procesa al momento y el saldo se actualiza enseguida.
 
 ---
 
 ## Recarga automática
 
-Si no quieres quedarte sin saldo por sorpresa, configura la recarga automática:
+Para no quedarte sin saldo por sorpresa:
 
-- Un **interruptor** para activar o desactivar la función.
-- **Umbral mínimo en euros** — cuando tu saldo disponible baje de esta cantidad, se disparará la recarga automáticamente.
-- **Paquete de recarga** — elige qué paquete quieres que se compre cada vez.
-- Botón **Guardar configuración** para aplicar los cambios.
+- Un **interruptor** para activarla o desactivarla.
+- **Umbral mínimo en euros** — cuando el saldo baje de esta cantidad, se dispara la recarga.
+- **Paquete de recarga** — cuál se compra cada vez que salta.
+- Botón **Guardar configuración**.
 
-![Historial de transacciones](../../../../assets/billings-auto-recharge.png)
+![Diálogo de recarga automática](../../../../assets/billings-auto-recharge.png)
 
-Mientras la recarga automática esté desactivada, los campos aparecen en gris y no se pueden editar.
+Mientras esté desactivada, los campos de umbral y paquete aparecen en gris y no se pueden editar.

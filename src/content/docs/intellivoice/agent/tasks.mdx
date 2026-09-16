@@ -1,37 +1,41 @@
 ---
 title: Tareas
-description: lorem
+description: Las llamadas pendientes de gestión agrupadas por contacto, para saber a quién tienes que devolver la llamada.
 ---
 
-Aquí se agrupan las llamadas que están pendientes de gestión. El objetivo es que tengas en un solo lugar todas las interacciones que requieren una acción por tu parte, sin tener que revisar el listado completo de llamadas.
+Aquí se agrupan las llamadas pendientes de gestión, **por contacto**. En vez de recorrer el listado completo de llamadas, tienes en un solo sitio a quién tienes que devolver la llamada y por qué.
 
 ![Vista general de tareas](../../../../assets/tasks-overview.png)
 
----
-
-## Vista de tarjetas
-
-Cada tarea se muestra como una tarjeta con la siguiente información:
-
-- **Teléfono** del llamante.
-- **Fecha y hora** de la última llamada.
-- **Resumen** automático generado por la IA sobre el motivo de la llamada.
-- **Datos recopilados** durante la llamada (nombre, matrícula, motivo de consulta, etc.), según los campos configurados en tu agente.
+La pantalla se divide en dos: la **lista de contactos** a la izquierda y el **detalle** del que selecciones a la derecha.
 
 ---
 
-## Acciones disponibles
+## Buscar y filtrar
 
-Desde cada tarjeta puedes: 
+Sobre la lista tienes:
 
-- **Marcar como completado** -- indica que ya has gestionado esa tarea.
-- **Resumir todas las llamadas con IA** -- genera un resumen conjunto de todas las llamadas de ese contacto.
-- **Ver llamadas** -- accede al historial completo de ese número.
+- **Buscador** por nombre, teléfono o texto.
+- **Filtros rápidos** con su contador: **Todas**, **Hoy** y **Sin datos** (contactos de los que el agente no llegó a recoger ningún dato).
+- **Orden**, por defecto *Más recientes*.
 
-![Vista de carta de tarea](../../../../assets/tasks-card.png)
+---
 
---- 
+## Detalle del contacto
 
-## Contador de tareas pendientes
+Al seleccionar un contacto de la lista, a la derecha aparece:
 
-En el menú lateral, la sección **Tareas** muestra un badge con el número de tareas pendientes para que lo tengas siempre visible.
+- **Teléfono**, número de llamadas acumuladas y cuándo fue la última.
+- **Resumen de la última llamada**, con el botón **Resumir con IA** para regenerarlo.
+- **Historial de llamadas** — todas las llamadas de ese número con su fecha, duración y resumen. El enlace **Ver** de cada una abre su detalle completo.
+- **Marcar como gestionado** — cierra la tarea. El contacto desaparece de Tareas y sus llamadas pasan a estado *Gestionado*.
+
+---
+
+## Contador de pendientes
+
+En el menú lateral, **Tareas** lleva un badge con el número de tareas pendientes, para que lo tengas siempre a la vista sin entrar.
+
+:::note
+Una tarea es un **contacto**, no una llamada. Si el mismo número ha llamado cinco veces, verás una sola tarea con las cinco llamadas dentro.
+:::
