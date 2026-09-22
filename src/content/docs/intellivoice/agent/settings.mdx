@@ -40,19 +40,25 @@ Los cambios en los campos solo afectan a las **llamadas nuevas**. Las anteriores
 
 ## Calendario
 
-Configura cómo agenda citas el agente. Requiere el módulo **Calendario** activo.
+Los valores **por defecto** de agendado del negocio. Requiere el módulo **Calendario** activo.
 
 ![Configuración de calendario](../../../../assets/agent-settings-calendar.png)
 
 | Ajuste | Qué define |
 |---|---|
-| **Límite** | Cuántas citas se pueden agendar al día. |
+| **Límite** | Máximo de citas por día. |
 | **Simultáneas** | Cuántas pueden coincidir a la misma hora. |
-| **Anticipación** | Con cuánta antelación mínima se puede reservar. |
+| **Anticipación** | Antelación mínima para reservar, en horas. |
+
+Cada uno lleva un interruptor **Sin límite** por si no quieres poner tope.
 
 ### Horario de disponibilidad
 
 Los días y franjas en los que se aceptan citas, con una fila por día. Actívalos con el interruptor y define los turnos; con **+** añades un segundo turno y con la papelera eliminas uno.
+
+:::caution
+Esto **no** es la configuración de tus calendarios. Cada calendario tiene su propio horario y sus propios límites, en su ficha dentro de [Calendario → Calendarios](/intellivoice/agent/calendar). Lo de aquí es lo que hereda un calendario **al crearse**; cambiarlo después no toca los que ya existen.
+:::
 
 :::note
 Este horario es solo para **citas** y es independiente del horario de atención del negocio, que se define en [Personalización](/intellivoice/workspace/general).

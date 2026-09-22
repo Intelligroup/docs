@@ -3,7 +3,7 @@ title: Tareas
 description: Las llamadas pendientes de gestión agrupadas por contacto, para saber a quién tienes que devolver la llamada.
 ---
 
-Aquí se agrupan las llamadas pendientes de gestión, **por contacto**. En vez de recorrer el listado completo de llamadas, tienes en un solo sitio a quién tienes que devolver la llamada y por qué.
+Aquí se agrupan las llamadas pendientes de gestión, **por número de teléfono**. En vez de recorrer el listado completo de llamadas, tienes en un solo sitio a quién tienes que devolver la llamada y por qué.
 
 ![Vista general de tareas](../../../../assets/tasks-overview.png)
 
@@ -11,13 +11,17 @@ La pantalla se divide en dos: la **lista de contactos** a la izquierda y el **de
 
 ---
 
-## Buscar y filtrar
+## Buscar, filtrar y ordenar
 
-Sobre la lista tienes:
+- **Buscador** por nombre, teléfono o texto — busca también dentro de los resúmenes y de los datos recogidos.
+- **Filtros** con su contador: **Todas**, **Hoy** (contactos con alguna llamada de hoy) y **Sin datos** (contactos de los que el agente no llegó a recoger ningún dato).
+- **Orden**: *Más recientes*, *Más antiguas* o *Más llamadas*.
 
-- **Buscador** por nombre, teléfono o texto.
-- **Filtros rápidos** con su contador: **Todas**, **Hoy** y **Sin datos** (contactos de los que el agente no llegó a recoger ningún dato).
-- **Orden**, por defecto *Más recientes*.
+Si tienes muchas, al final de la lista aparece **Cargar más tareas**.
+
+:::note
+Si alguna llamada del contacto capturó un campo de nombre, la tarea se muestra con ese nombre en vez de con el número.
+:::
 
 ---
 
@@ -25,10 +29,16 @@ Sobre la lista tienes:
 
 Al seleccionar un contacto de la lista, a la derecha aparece:
 
-- **Teléfono**, número de llamadas acumuladas y cuándo fue la última.
-- **Resumen de la última llamada**, con el botón **Resumir con IA** para regenerarlo.
-- **Historial de llamadas** — todas las llamadas de ese número con su fecha, duración y resumen. El enlace **Ver** de cada una abre su detalle completo.
-- **Marcar como gestionado** — cierra la tarea. El contacto desaparece de Tareas y sus llamadas pasan a estado *Gestionado*.
+- **Teléfono**, número de llamadas acumuladas y cuándo fue la última, con un botón para **copiar el teléfono**.
+- **Datos recogidos** en las llamadas de ese contacto.
+- **Resumen de la última llamada**, con el botón **Resumir con IA** para generar un resumen conjunto de todas sus llamadas.
+- **Historial de llamadas** — todas las de ese número con fecha, duración y resumen. El enlace **Ver** de cada una abre su detalle completo.
+
+---
+
+## Marcar como gestionado
+
+El botón **Marcar como gestionado** cierra la tarea: pasa a *Gestionado* **todas** las llamadas pendientes de ese mismo número de una vez, y el contacto desaparece de la lista.
 
 ---
 
